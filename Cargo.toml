@@ -1,0 +1,28 @@
+[package]
+name = "gm-discord"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+serenity = { git = "https://github.com/serenity-rs/serenity", default-features = false, features = ["client", "gateway", "rustls_backend", "model"] }
+ureq = { version = "2.5.0", features = ["json"] }
+async-trait = "0.1.56"
+serde = "1.0.140"
+futures = "0.3.23"
+dotenv = "0.15.0"
+
+[dependencies.tokio]
+version = "1.20.0"
+features = ["macros", "rt-multi-thread", "process", "io-std"]
+
+[dependencies.subxt]
+git = "https://github.com/paritytech/subxt"
+rev = "2fe9a1446d32b93a10804db3304ccaac65f764b8"
+
+[dependencies.codec]
+package = "parity-scale-codec"
+version = "3.1.2"
+default-features = false
+features = ["derive", "full", "bit-vec"]
